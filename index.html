@@ -1,137 +1,291 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amanda & Joaquim | 2 juli 2028</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amanda & Joaquim | Söndag 2 juli 2028</title>
+  <meta name="description" content="Save the date för Amanda och Joaquims bröllop på Hotell Havsbaden i Grisslehamn." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --rose:#a85b63;
-      --rose-dark:#7a3f46;
-      --cream:#f8f3ee;
-      --paper:#fffaf6;
-      --ink:#3b302f;
-      --muted:#7c6c69;
-      --line:rgba(122,63,70,.18);
+    :root {
+      --bg: #f7f3f0;
+      --paper: rgba(255, 252, 249, 0.92);
+      --ink: #5a4446;
+      --ink-soft: #796569;
+      --accent: #8f4a59;
+      --accent-soft: rgba(143, 74, 89, 0.14);
+      --line: rgba(143, 74, 89, 0.18);
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      color:var(--ink);
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(234,212,214,.55), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(168,91,99,.14), transparent 30%),
-        var(--cream);
-      font-family:Georgia,"Times New Roman",serif;
-      line-height:1.7;
+        radial-gradient(circle at top left, rgba(143, 74, 89, 0.06), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(143, 74, 89, 0.07), transparent 30%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.6;
     }
-    .page{width:min(100%,1100px);margin:0 auto;padding:24px}
-    .card{
-      min-height:calc(100vh - 48px);
-      display:grid;
-      place-items:center;
-      padding:72px 24px;
-      background:rgba(255,250,246,.86);
-      border:1px solid var(--line);
-      box-shadow:0 24px 80px rgba(83,55,56,.08);
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 28px 20px;
     }
-    .content{width:min(100%,740px);text-align:center}
-    .eyebrow{
-      margin:0 0 20px;
-      color:var(--rose-dark);
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:.76rem;
-      letter-spacing:.28em;
-      text-transform:uppercase;
+
+    .card {
+      position: relative;
+      min-height: calc(100vh - 56px);
+      display: grid;
+      place-items: center;
+      padding: 72px 28px;
+      background: var(--paper);
+      border: 1px solid rgba(143, 74, 89, 0.08);
+      box-shadow: 0 22px 70px rgba(60, 38, 42, 0.06);
+      overflow: hidden;
     }
-    h1{
-      margin:0;
-      font-size:clamp(3rem,8vw,6.8rem);
-      line-height:.98;
-      font-weight:400;
-      letter-spacing:-.045em;
-      color:var(--rose-dark);
+
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(143, 74, 89, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
     }
-    .ampersand{font-style:italic;color:var(--rose);padding:0 .08em}
-    .subtitle{
-      margin:26px 0 0;
-      font-size:clamp(1.5rem,3vw,2.25rem);
-      font-style:italic;
-      font-weight:400;
-      color:var(--rose);
+
+    .card::before {
+      top: -130px;
+      left: -90px;
     }
-    .ornament{width:76px;height:1px;margin:34px auto;background:var(--rose);opacity:.45}
-    .story,.closing{margin:0 auto;max-width:650px;font-size:clamp(1.05rem,2vw,1.2rem)}
-    .story p,.closing p{margin:0 0 1.15em}
-    .details{
-      margin:40px auto;
-      padding:28px 18px;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+
+    .card::after {
+      right: -100px;
+      bottom: -135px;
     }
-    .date{
-      margin:0;
-      color:var(--rose-dark);
-      font-size:clamp(1.8rem,4vw,3rem);
-      font-weight:400;
+
+    .content {
+      width: min(100%, 720px);
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
-    .place{
-      margin:8px 0 0;
-      color:var(--muted);
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:.98rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
+
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
     }
-    .hotel-note{
-      margin:34px auto 0;
-      max-width:620px;
-      padding:24px 26px;
-      background:rgba(234,212,214,.28);
-      border:1px solid var(--line);
-      font-size:1rem;
+
+    .rose-top {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 12px;
+      color: var(--accent);
+      opacity: 0.92;
     }
-    .hotel-note strong{
-      display:block;
-      margin-bottom:7px;
-      color:var(--rose-dark);
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:.78rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
+
+    .rose-top svg,
+    .divider-flower svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
-    .save{
-      margin:38px 0 8px;
-      color:var(--rose-dark);
-      font-size:clamp(1.7rem,3.6vw,2.6rem);
-      font-style:italic;
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.45rem, 8vw, 5.8rem);
+      line-height: 0.92;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.03em;
     }
-    .more{
-      margin:0;
-      color:var(--muted);
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:.92rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
+
+    h1 span { display: block; }
+
+    .ampersand {
+      display: block;
+      margin: 6px 0 2px;
+      font-size: clamp(2.9rem, 6vw, 4rem);
+      font-weight: 300;
     }
-    @media(max-width:640px){
-      .page{padding:0}
-      .card{min-height:100vh;padding:56px 22px;border-left:0;border-right:0}
-      .hotel-note{padding:20px}
+
+    .subtitle {
+      margin: 18px 0 0;
+      font-family: "Parisienne", cursive;
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 28px auto 30px;
+      color: var(--accent);
+      opacity: 0.9;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      display: block;
+      width: 68px;
+      height: 1px;
+      background: rgba(143, 74, 89, 0.34);
+    }
+
+    .divider-flower {
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story,
+    .closing,
+    .hotel-note {
+      font-size: clamp(1.14rem, 2vw, 1.34rem);
+    }
+
+    .story p,
+    .closing p {
+      margin: 0 0 0.65em;
+    }
+
+    .details {
+      margin: 28px auto 26px;
+      padding: 22px 18px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .date {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      color: var(--accent);
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .place {
+      margin: 8px 0 0;
+      font-size: 0.86rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #947b7f;
+    }
+
+    .closing {
+      margin: 0 auto;
+      max-width: 640px;
+    }
+
+    .hotel-note {
+      margin: 28px auto 0;
+      max-width: 600px;
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.54);
+    }
+
+    .hotel-note strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .save {
+      margin: 32px 0 6px;
+      font-family: "Parisienne", cursive;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .more {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #a18c90;
+    }
+
+    @media (max-width: 720px) {
+      .page { padding: 0; }
+
+      .card {
+        min-height: 100vh;
+        padding: 56px 20px;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .story,
+      .closing,
+      .hotel-note {
+        font-size: 1.08rem;
+      }
+
+      .place {
+        letter-spacing: 0.11em;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="card">
+    <section class="card" aria-labelledby="wedding-title">
       <div class="content">
         <p class="eyebrow">Save the date</p>
 
-        <h1>Amanda <span class="ampersand">&</span> Joaquim</h1>
+        <div class="rose-top" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M60 20c-5-7-15-8-22-2-7 6-8 16-2 23l9 10 15-12 15 12 9-10c6-7 5-17-2-23-7-6-17-5-22 2z" />
+            <path d="M60 38c-7 0-12 5-12 12 0 8 5 12 12 18 7-6 12-10 12-18 0-7-5-12-12-12z" />
+            <path d="M60 57v35" />
+            <path d="M60 69c-9-5-17-3-21 5 8 2 15 4 21 1" />
+            <path d="M60 79c9-5 17-3 21 5-8 2-15 4-21 1" />
+            <path d="M57 92c-9 2-13 8-16 14" />
+            <path d="M63 92c9 2 13 8 16 14" />
+          </svg>
+        </div>
+
+        <h1 id="wedding-title">
+          <span>Amanda</span>
+          <span class="ampersand">&</span>
+          <span>Joaquim</span>
+        </h1>
+
         <p class="subtitle">La vie en rose</p>
 
-        <div class="ornament"></div>
+        <div class="divider" aria-hidden="true">
+          <span class="divider-flower">
+            <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M60 28c5-7 15-8 22-2 7 6 8 16 2 23l-8 8-16-13-16 13-8-8c-6-7-5-17 2-23 7-6 17-5 22 2z"/>
+              <path d="M60 44c-6 0-10 4-10 10 0 7 5 11 10 15 5-4 10-8 10-15 0-6-4-10-10-10z"/>
+            </svg>
+          </span>
+        </div>
 
         <div class="story">
           <p>Den första låten Joaquim spelade för Amanda på saxofon var <em>La vie en rose</em>.</p>
@@ -140,18 +294,19 @@
         </div>
 
         <div class="details">
-          <p class="date">2 juli 2028</p>
+          <p class="date">Söndag 2 juli 2028</p>
           <p class="place">Hotell Havsbaden, Grisslehamn</p>
         </div>
 
         <div class="closing">
-          <p>Vi har fått uppleva en kärlek som gör livet större, varmare och mer levande. Det är också det vi önskar för människorna vi älskar.</p>
+          <p>Vi har fått uppleva en kärlek som gör livet större, varmare och mer levande.</p>
+          <p>Det är också det vi önskar för människorna vi älskar.</p>
           <p>Nu vill vi samla er vid havet och fira.</p>
         </div>
 
         <div class="hotel-note">
           <strong>Boende</strong>
-          Vi har reserverat rum på Hotell Havsbaden för våra gäster till ett särskilt bröllopspris. Mer information om bokning kommer längre fram.
+          Vi har reserverat rum på Hotell Havsbaden som ni kan boka till ett förmånligt bröllopspris. Mer information om bokningen kommer från oss längre fram.
         </div>
 
         <p class="save">Save the date</p>
